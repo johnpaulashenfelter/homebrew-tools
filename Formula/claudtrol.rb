@@ -1,8 +1,8 @@
 class Claudtrol < Formula
   desc "Claude workflow CLI multiplexer"
   homepage "https://github.com/johnpaulashenfelter/claudtrol"
-  url "https://github.com/johnpaulashenfelter/claudtrol/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "5b1b4fb8eebf4ccdf6d60cecf38a837e299376da69151daef35b13fbff16abfa"
+  url "https://github.com/johnpaulashenfelter/claudtrol/archive/refs/tags/v0.1.2.tar.gz"
+  sha256 "a7371cbe79dd414622adecd96ffb9f9aba08bb62547f362ca550e8de40254b79"
   license "MIT"
 
   def install
