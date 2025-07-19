@@ -1,0 +1,19 @@
+name: Auto-update kontroll formula
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'  # every Monday at 6am UTC
+  workflow_dispatch:
+
+jobs:
+  bump-kontroll:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Bump kontroll if a new release is available
+        uses: mislav/bump-homebrew-formula-action@v3
+        with:
+          formula-name: kontroll
+        env:
+          COMMITTER_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
