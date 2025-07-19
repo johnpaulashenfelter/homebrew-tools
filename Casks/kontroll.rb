@@ -9,3 +9,8 @@ cask "kontroll" do
 
   binary "kontroll"
 end
+
+livecheck do
+  url "https://github.com/zsa/kontroll/releases/latest"
+  regex(%r{href=.*?/tag/(\d+(?:\.\d+)+)}i)
+end
