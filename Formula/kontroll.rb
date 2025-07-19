@@ -23,6 +23,7 @@ class Kontroll < Formula
   end
 
   livecheck do
-    url :github_latest
+    url "https://github.com/zsa/kontroll/releases/latest"
+    regex(%r{href=.*/tag/v?(\d+(?:\.\d+)+)}i)
   end
 end
