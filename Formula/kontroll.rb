@@ -11,7 +11,7 @@ class Kontroll < Formula
   end
 
   def install
-    bin.install "kontroll-1.0.4-macos-universal" => "kontroll"
+    bin.install "kontroll"
   end
 
   test do
