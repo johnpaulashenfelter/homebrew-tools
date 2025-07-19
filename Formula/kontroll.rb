@@ -1,28 +1,20 @@
 class Kontroll < Formula
   desc "Keyboard layout switcher for ZSA keyboards"
   homepage "https://github.com/zsa/kontroll"
-  url "https://github.com/zsa/kontroll/releases/download/v1.4.0/kontroll-macos-universal"
-  sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
-  version "1.4.0"
+  url "https://github.com/zsa/kontroll/releases/download/1.0.4/kontroll-1.0.4-macos-universal.zip"
+  sha256 "fad2dde5d53114a8ff30ed75df414f169c13e00f04536e700c70785563811c5d"
   license "MIT"
 
-  def install
-    bin.install "kontroll-macos-universal" => "kontroll"
+  livecheck do
+    url "https://github.com/zsa/kontroll/releases/latest"
+    regex(%r{href=.*?/tag/(\d+(?:\.\d+)+)}i)
   end
 
-  def caveats
-    <<~EOS
-      🔐 kontroll is a standalone binary for managing ZSA keyboard layers.
-      This formula installs the latest release from:
-        https://github.com/zsa/kontroll
-    EOS
+  def install
+    bin.install "kontroll"
   end
 
   test do
-    system "#{bin}/kontroll", "--version"
-  end
-
-  livecheck do
-    url :github_latest
+    system bin/"kontroll", "--version"
   end
 end
